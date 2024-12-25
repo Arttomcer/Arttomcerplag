@@ -1,0 +1,76 @@
+{
+  "name": "your-extension-name",
+  "displayName": "Your Extension Display Name",
+  "description": "Description of your extension",
+  "version": "0.0.1",
+  "publisher": "your-publisher",
+  "engines": {
+      "vscode": "^1.50.0"
+  },
+  "activationEvents": [
+      "onCommand:extension.convertToSnakeCase",
+      "onCommand:extension.convertToCamelCase",
+      "onCommand:extension.convertToPascalCase",
+      "onCommand:extension.convertToKebabCase"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+      "commands": [
+          {
+              "command": "extension.convertToSnakeCase",
+              "title": "Convert to Snake Case"
+          },
+          {
+              "command": "extension.convertToCamelCase",
+              "title": "Convert to Camel Case"
+          },
+          {
+              "command": "extension.convertToPascalCase",
+              "title": "Convert to Pascal Case"
+          },
+          {
+              "command": "extension.convertToKebabCase",
+              "title": "Convert to Kebab Case"
+          }
+      ],
+      "keybindings": [
+          {
+              "command": "extension.convertToSnakeCase",
+              "key": "ctrl+shift+s",  
+              "when": "editorTextFocus"
+          },
+          {
+              "command": "extension.convertToCamelCase",
+              "key": "ctrl+shift+c", 
+              "when": "editorTextFocus"
+          },
+          {
+              "command": "extension.convertToPascalCase",
+              "key": "ctrl+shift+p", 
+              "when": "editorTextFocus"
+          },
+          {
+              "command": "extension.convertToKebabCase",
+              "key": "ctrl+shift+k", 
+              "when": "editorTextFocus"
+          }
+      ]
+  },
+  "scripts": {
+      "vscode:prepublish": "npm run compile",
+      "compile": "tsc -p ./",
+      "watch": "tsc -watch -p ./",
+      "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+      "typescript": "^4.0.0",
+      "vscode": "^1.1.36",
+      "ts-loader": "^8.0.0",
+      "webpack": "^5.0.0",
+      "webpack-cli": "^4.0.0"
+  },
+  "repository": {
+        "type": "git",
+        "url": "https://github.com/Arttomcer/Arttomcerplag.git"
+    }
+}
